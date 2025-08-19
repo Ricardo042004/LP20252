@@ -1,6 +1,6 @@
 '''
 Exercícios sobre os comandos básicos em Python
-'''ef cabecalho(titulo):
+'''def cabecalho(titulo):
     print('========================================')
     print(f'============= {titulo} ===============')
     print('========================================')
@@ -180,6 +180,15 @@ def q18():
 #    valor da prestação acrescido dos juros. Considere juros simples.
 def q19():
     cabecalho('QUESTÃO 19')
+def litros_consumidos(distancia,media_consumo)
+ return distancia/media_consumo
+
+ def distancia_percorrida(tempo,velocidade):
+    return tempo*velocidade
+tempo = float(input('Tempo decorrido na viagem(hora): '))
+velocidade = int(input('Velocidade média(km/h): '))
+print(f'distância percorrida: {(distancia_percorrida(tempo,velocidade)}')
+print(f'Litros consumidos: {litros_consumidos(distancia_percorrida(tempo,velocidade),12)}')
 
 #20. Faça um programa que efetue a apresentação do valor da conversão
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será

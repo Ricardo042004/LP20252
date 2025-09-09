@@ -5,6 +5,7 @@ Exercícios sobre os comandos de condição em python
 from datetime import date, datetime
 
 HOJE = datetime.now() # Pega data/hora do computador
+from tkinter import Label, Entry, Button, Tk , messagebox
 
 def exemploSe():
     idade = int(input('Idade:'))
@@ -133,19 +134,82 @@ def q91():
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
-        
-#11. Faça um programa que leia 3 números e imprima o maior deles.
+    def q10():
+   a = int(input('Número: '))
+   b = int(input('Número: '))
+   c = int(input('Número: '))
+    if a<b<c:
+        print(a,b,c)
+    if a<c<b:
+        print(a,c,b)
+    if b<a<c:
+        print(b,a,c)
+    if b<c<a:
+        print(b,c,a)
+    if c<a<b:
+        print(c,a,b)
+    if c<b<a:
+        print(c,b,a)
 
+#11. Faça um programa que leia 3 números e imprima o maior deles.
+def q11():
+    num = int(input('Número: '))
+    maior = num
+    num = int(input('Número: '))
+    if num > maior:
+        maior = num
+    num = int(input('Número: '))
+    if num > maior:
+        maior = num
+    print(maior)
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
 #• Se é menor de idade
 #• Se é maior de 65 anos
-
+    def q12():
+    def show_idade():
+        idade = int(txt_idade.get())
+        msg=''
+        if idade <18:
+            msg = 'Menor de Idade'
+        elif idade >= 65:
+            msg = 'Melhor idade'
+        else:
+            msg = 'Maior idade'
+        messagebox.showinfo(
+            title='Situação da Idade:',
+            message=f'{msg}'
+        )
+        txt_idade.delete(0,len(txt_idade.get()))
+        
+    window = Tk()
+    window.title('Questão 12')
+    window.config(padx=10, pady=10)
+    lbl_idade = Label(text='Idade:')
+    lbl_idade.grid(row=0, column=0)
+    global txt_idade
+    txt_idade = Entry(width=4)
+    txt_idade.grid(row=0,column=1)
+    txt_idade.focus()
+    btn_ok = Button(text='OK', width=5, command=show_idade)
+    btn_ok.grid(row=1, column=0, columnspan=2)
+    window.mainloop()
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
 #reprovação e as demais em prova final).
+def q13():
+    nome = input("Nome: ")
+    nota1 = float(input("Nota da prova 1:"))
+    nota2 = float(input("Nota da prova 2:"))
+    media = (nota1 + nota2)/2
+    if (media >= 7):
+        print (f'Aprovado com média {media}.')
+    elif (7 > media >= 3):
+        print (f"Média: {media}. \nProva final.")
+    else:
+        print (f"Média {media}. \nReprovado.")
 
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
@@ -185,6 +249,15 @@ def q91():
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
 #aparecer uma mensagem informando que não existe mês com este número.
+def q18():
+    mes = int(input('Número do Mês: '))
+    if mes < 1 or mes > 12:
+        print('Mês Inválido!')
+    else:
+        data = datetime.strptime(f'01/{mes}/25', '%d/%m/%y')
+        mes_extenso = data.strftime('%B')
+        print(mes_extenso)
+        #print(tradutor.translate("Month: " = mes_extenso"))
 
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o

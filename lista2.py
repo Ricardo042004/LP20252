@@ -134,23 +134,6 @@ def q91():
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
-    def q10():
-   a = int(input('Número: '))
-   b = int(input('Número: '))
-   c = int(input('Número: '))
-    if a<b<c:
-        print(a,b,c)
-    if a<c<b:
-        print(a,c,b)
-    if b<a<c:
-        print(b,a,c)
-    if b<c<a:
-        print(b,c,a)
-    if c<a<b:
-        print(c,a,b)
-    if c<b<a:
-        print(c,b,a)
-
 #11. Faça um programa que leia 3 números e imprima o maior deles.
 def q11():
     num = int(input('Número: '))
@@ -167,7 +150,7 @@ def q11():
 #• Se é menor de idade
 #• Se é maior de 65 anos
     def q12():
-    def show_idade():
+     def show_idade():
         idade = int(txt_idade.get())
         msg=''
         if idade <18:
@@ -200,7 +183,7 @@ def q11():
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
 #reprovação e as demais em prova final).
 def q13():
-    nome = input("Nome: ")
+    nome = int(input("nome do aluno: "))
     nota1 = float(input("Nota da prova 1:"))
     nota2 = float(input("Nota da prova 2:"))
     media = (nota1 + nota2)/2
@@ -286,7 +269,7 @@ def q18():
 #• Nome do livro:
 #• Tipo de usuário:
 #• Total de dias:
-
+ 
 #22. Construa um programa que leia o percurso em quilômetros, o tipo do carro e
 #informe o consumo estimado de combustível, sabendo-se que um carro tipo A faz
 #12 km com um litro de gasolina, um tipo B faz 9 km e o tipo C 8 km por litro.
@@ -316,3 +299,6 @@ def q18():
 #0,3 1º grupo
 #0,4 1º e 2º grupos
 #0,5 1º, 2º e 3º grupos
+
+questao = int(input('Qual questão executar? '))
+eval(f'q{questao}()')
